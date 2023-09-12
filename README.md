@@ -247,6 +247,52 @@ git branch即分支，就像这样。中间蓝色的可视为主要开发线 `ma
    - 执行测试以确保合并没有引入新的问题。
    - 删除不再需要的分支。
 
+### Git stash
+
+当你在进行 Git 代码版本控制时，你可能会遇到需要暂时存储修改的情况。这时可以使用 `git stash` 命令来将未提交的修改暂存起来，以便稍后再次应用。
+
+以下是关于 `git stash` 的一些常见用法和说明：
+
+1. 使用 `git stash save` 命令来保存当前的修改，并清空暂存区：
+
+   ```
+   git stash save "save message"
+   ```
+
+2. 使用 `git stash list` 命令来查看已保存的 stash 列表：
+
+   ```
+   git stash list
+   ```
+
+3. 使用 `git stash apply` 命令来应用最新的 stash，并保留 stash 备份：
+
+   ```
+   git stash apply
+   ```
+
+4. 使用 `git stash pop` 命令来应用最新的 stash，并删除 stash 备份：
+
+   ```
+   git stash pop
+   ```
+
+5. 使用 `git stash drop` 命令来删除指定的 stash：
+
+   ```
+   git stash drop stash@{n}
+   ```
+
+6. 使用 `git stash branch` 命令来创建一个新的分支，并应用指定 stash 内容到新分支：
+
+   ```
+   git stash branch new_branch_name stash@{n}
+   ```
+
+Git 官方文档中有更详细的说明和用法示例，你可以查看以下链接获取更多信息：
+
+- [Git Stash 官方文档](https://git-scm.com/docs/git-stash)
+
 ### Git tags管理
 
 1. 标签的作用：
